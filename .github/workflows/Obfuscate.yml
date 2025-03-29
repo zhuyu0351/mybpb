@@ -53,5 +53,5 @@ jobs:
         with:
           branch: main
           commit_message: ':arrow_up: update latest bbb'
-          commit_author: '278883176@qq.com'
+          commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
           push_options: '--set-upstream'
