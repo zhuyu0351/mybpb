@@ -1,4 +1,4 @@
-name: Build Obfuscate BPB Panel
+name: Build My Obfuscate BPB Panel
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
 
       - name: Clone BPB workjs
         run: |
-          wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/build/unobfuscated-worker.js
+          #wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/build/unobfuscated-worker.js
 
       - name: Obfuscate BPB worker js
         run: |
@@ -52,6 +52,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: main
-          commit_message: ':arrow_up: update latest bpb panel'
-          commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+          commit_message: ':arrow_up: update latest bbb'
+          commit_author: 'ggg'
           push_options: '--set-upstream'
