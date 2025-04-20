@@ -26,10 +26,13 @@ jobs:
       - name: Install dependencies
         run: |
           npm install -g javascript-obfuscator
+          sudo apt-get install -y unzip
 
-      - name: Clone BPB workjs
+      - name: Download and extract latest BPB worker
         run: |
-          wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/build/unobfuscated-worker.js
+          wget https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/unobfuscated-worker.zip
+          unzip -o unobfuscated-worker.zip
+          mv _worker.js origin.js
 
       - name: Obfuscate BPB worker js
         run: |
@@ -44,7 +47,7 @@ jobs:
           --self-defending false \
           --simplify true
 
-      - name: Commit changes
+      - name: 提交更改
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: main
